@@ -10,7 +10,7 @@
 int _fork(char **array_Of_Words, char **argv)
 {
 	pid_t child_pid;
-	int status = 0; /*check if its valid to initialize with 0*/
+	int status; /*check if its valid to initialize with 0*/
 	/*
 	*char *args[] = {"ls", "-l", "/tmp/", NULL};
 	*char *envp[] = {NULL};
@@ -19,7 +19,7 @@ int _fork(char **array_Of_Words, char **argv)
 	if (child_pid == -1)
 	{
 		perror("error");
-		return (1);
+		return (2);
 	}
 
 	if (child_pid == 0)
@@ -29,8 +29,9 @@ int _fork(char **array_Of_Words, char **argv)
 	}
 	else
 	{
-		_wait(status);
+		waitpid(child_pid, &status, 0);
+		_freeArrOfWords(array_Of_Words);
 	}
 
-	return (0);
+	return (WEXITSTATUS(status));
 }

@@ -8,43 +8,26 @@
  */
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	char **array_Of_Words = NULL, *line = NULL, *delim = "\n\t\r\a ";
-	size_t len = 0;
-	ssize_t nread;
-	int file_stat; /*int status, file_stat; */
+	char **array_Of_Words = NULL, *line = NULL, *delim = " \n\t";
+	int status = 0;
 
-	if (isatty(STDIN_FILENO))
+	while (1)
 	{
-		_puts("$ ");
-		
-		while ((nread = getline(&line, &len, stdin)) != -1)
+		line = reading_line();
+		if (line == NULL) /*ctrl+d*/
 		{
-			if (nread != 1) /*Handle enter pressing*/
-			{
-				array_Of_Words = _stringTok(line, delim);
-				if (_strcmp(array_Of_Words[0], "exit") == 0)
-					exit_bul(array_Of_Words, line);
-				if (isEnv(array_Of_Words[0]))
-				{
-					printf("$ ");
-					continue; }
-				file_stat = _stat(array_Of_Words[0]); /*fstat=0? fork:error*/
-				file_stat == 0 ? _fork(array_Of_Words, argv) :
-				printf("%s: No such file or directory\n", argv[0]);	}
-			printf("$ ");	}	}
-	else
-	{ /*non interactive mode*/
-		while (getline(&line, &len, stdin) != -1)
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
+			return (status);
+		}
+		array_Of_Words = _stringTok(line, delim);
+		if (!array_Of_Words)
 		{
-			array_Of_Words = _stringTok(line, delim);
-			if (_strcmp(array_Of_Words[0], "exit") == 0)
-				exit_bul(array_Of_Words, line);
-			if (isEnv(array_Of_Words[0]))
-			{
-				printf("$ ");
-				continue;	}
-			file_stat = _stat(array_Of_Words[0]);
-			file_stat == 0 ? _fork(array_Of_Words, argv) :
-			printf("%s:command not found\n", argv[0]);	}	}
-	exit_bul(array_Of_Words, line);
-	return (0);	}
+			continue;
+		}
+			/*status = _exec(array_Of_Words, argv);*/
+		status = _fork(array_Of_Words, argv);
+
+	}
+	return (0);
+}

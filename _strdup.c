@@ -8,34 +8,30 @@
 
 char *_strdup(char *source)
 {
-	size_t i = 0;
-	size_t source_length;
-	char *des;
+	char *des = NULL, *source_tmp_ptr = source;
+	int source_length = 0, iter = 0;
 
 	if (source == NULL)
 	{
 		return (NULL);
 	}
-	else
+
+	while (*source_tmp_ptr != '\0')
 	{
-		source_length = _strlen(source);
-		des = malloc(source_length + 1);
-
-		if (des == NULL)
-		{
-			perror("malloc");
-			/*exit(EXIT_FAILURE); */
-			return (NULL);
-		}
-
-		while (source[i] != '\0')
-		{
-			des[i] = source[i];
-			i++;
-		}
-
-		des[source_length] = '\0';
-
-		return (des);
+		source_length++;
+		source_tmp_ptr++;
 	}
+	des = malloc((sizeof(char)) * (source_length + 1));
+	if (des == NULL)
+	{
+		perror("malloc");
+		return (NULL);
+	}
+
+	for (iter = 0; iter < source_length; iter++)
+	{
+		des[iter] = source[iter];
+	}
+	des[source_length] = '\0';
+	return (des);
 }

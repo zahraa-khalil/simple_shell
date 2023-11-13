@@ -8,12 +8,13 @@
 
 int _strlen(char *s)
 {
-	int i = 0;
+	int length = 0;
+	char *s_tmp_ptr = s;
 
-	while (s[i] != '\0')
+	while (*s_tmp_ptr != '\0')
 	{
-		i++;
+		length++;
+		s_tmp_ptr++;
 	}
-
-	return (i);
+	return (length);
 }

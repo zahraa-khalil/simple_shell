@@ -13,6 +13,8 @@
 #include <sys/wait.h>
 
 extern char **environ;
+char *reading_line(void);
+void _freeArrOfWords(char **array_Of_Words);
 
 int _putchar(char c);
 void _puts(char *str);

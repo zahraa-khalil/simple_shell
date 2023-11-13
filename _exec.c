@@ -14,32 +14,12 @@ int _exec(char **array_Of_Words, char **argv)
 	/*if (execve(full_Command, array_Of_Words, env) == -1)*/
 	if (execve(array_Of_Words[0], array_Of_Words, env) == -1)
 	{
-		/*
-		 *if (array_Of_Words == NULL || array_Of_Words[0] == NULL) {
-		 *	fprintf(stderr, "Invalid arguments for execve.\n");
-		 *	exit(EXIT_FAILURE);
-		 *}
-		 */
-		/*printf("array_Of_Words[0]: %s\n", array_Of_Words[0]);*/
-		switch (errno)
-		{
-		case ENOENT:
-			fprintf(stderr, "%s: %s\n", argv[0], strerror(errno));
-			/*write(1, argv[0], 5);*/
-			break;
-		case EFAULT:
-			fprintf(stderr, "%s: %s\n", argv[0], strerror(errno));
-			break;
-		case EACCES:
-			fprintf(stderr, "Permission denied.\n");
-			break;
-		default:
-			break;
-			fprintf(stderr, "An error occurred: %d\n", errno);
-		}
-
-		exit(EXIT_FAILURE);
+		perror(argv[0]);
+		_freeArrOfWords(array_Of_Words);
+		exit(127);
 	}
 
 	return (0);
 }
+
+
