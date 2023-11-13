@@ -7,6 +7,7 @@
  *Return: environment variable name
  */
 
+
 int _environ(void)
 {
 	char **env = environ;
