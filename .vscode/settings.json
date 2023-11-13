@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "_strlen": "c",
-        "_exit": "c"
+        "_exit": "c",
+        "_puts": "c",
+        "_path": "c"
     }
 }

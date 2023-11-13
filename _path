@@ -8,16 +8,22 @@
  *Return: One directory per line.
  */
 
-void _path(char *name, char *delim)
+void _path(char *name)
 {
-	char *path_cp, *token;
+	char *envir_path;
+/*(PATH = /usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games)*/
+	envir_path = _getenv("PATH");
+	
+
+}/*
+char *path_cp, *token;
 
 	path_cp = _strdup(name);
 	token = strtok(path_cp, delim);
 
 	while (token != NULL)
 	{
-		/*printf("%s\n", token);*/
+		/*printf("%s\n", token);
 		token = strtok(NULL, delim);
 	}
-}
+	*/

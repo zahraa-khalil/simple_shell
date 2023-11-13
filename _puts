@@ -18,3 +18,18 @@ void _puts(char *str)
 		i++;
 	}
 }
+
+
+/*
+int main (void)
+{
+	char arr1[] = "hello";
+	char arr2[] = "sssssssssss";
+		printf("1: %s\n2:%s \n", arr1, arr2);
+
+	strcpy(arr2, arr1);
+	printf("1: %s\n2:%s \n", arr1, arr2);
+	return(0);
+}
+
+*/
