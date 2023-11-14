@@ -10,7 +10,7 @@
 char *_getenv(char *string)
 {
 	char *tmpPtr, *firstHalf, *secondHalf, *envir;
-	int iter;
+	int iter = 0;
 
 	while (environ[iter])
 	{
