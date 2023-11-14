@@ -9,7 +9,7 @@
 int main(int argc __attribute__((unused)), char *argv[])
 {
 	char **array_Of_Words = NULL, *line = NULL, *delim = " \n\t";
-	int status = 0;
+	int status = 0, index = 0;
 
 	while (1)
 	{
@@ -20,13 +20,16 @@ int main(int argc __attribute__((unused)), char *argv[])
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
+
 		array_Of_Words = _stringTok(line, delim);
 		if (!array_Of_Words)
 		{
 			continue;
 		}
+			/*status = _exec(array_Of_Words, argv);*/
+		index++;
+		status = _fork(array_Of_Words, argv, index);
 
-		status = _fork(array_Of_Words, argv);
 		/*status = _exec(array_Of_Words, argv);*/
 	}
 	return (0);

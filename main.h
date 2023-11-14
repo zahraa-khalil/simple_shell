@@ -15,14 +15,22 @@
 extern char **environ;
 char *reading_line(void);
 void _freeArrOfWords(char **array_Of_Words);
+char *_get_path(char *cmd);
+int _exec(char *full_command, char **array_Of_Words);
+void _error_print(char *file_name, char *command, int index);
+int _fork(char **array_Of_Words, char **argv, int index);
+char *_itoa(int number);
+void _reverse_str(char *string, int length);
+char *_strcat(char *dest, char *src);
+
+
 
 int _putchar(char c);
 void _puts(char *str);
 char **_stringTok(char *string, char *delim);
 void _strcpy(char *source, char *destination);
 char *_strdup(char *source);
-int _fork(char **array_Of_Words, char **argv);
-int _exec(char **array_Of_Words, char **argv);
+
 int _wait(int status);
 int _ppid(void);
 int _pid(void);
@@ -31,7 +39,7 @@ int _whichFile(char *filename[]);
 int _environ(void);
 void exit_program(char *input);
 char *_getenv(char *name);
-void _path(char *name, char *delim);
+
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int len);
