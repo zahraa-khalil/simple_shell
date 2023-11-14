@@ -25,10 +25,8 @@ int main(int argc __attribute__((unused)), char *argv[])
 		{
 			continue;
 		}
-		if (_checkBuiltIns(array_Of_Words))
-			handleBuiltins(array_Of_Words, argv, status);
-		else /*execute*/
-			status = _fork(array_Of_Words, argv);
+
+		status = _fork(array_Of_Words, argv);
 		/*status = _exec(array_Of_Words, argv);*/
 	}
 	return (0);
