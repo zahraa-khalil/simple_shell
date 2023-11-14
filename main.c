@@ -29,7 +29,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 		}
 		/*status = _exec(array_Of_Words, argv);*/
 
-		if (_checkBuiltIns(array_Of_Words, argv, status))
+		if (_checkBuiltIns(array_Of_Words, argv, &status, index))
 		{
 			continue;
 		}
