@@ -46,7 +46,7 @@ int _strncmp(char *s1, char *s2, int len);
 int isEnv(char *input);
 int _isalpha(int c);
 void exit_bul(char **array_Of_Words, char **argv, int status);
-int _checkBuiltIns(char **array_Of_Words);
+int _checkBuiltIns(char **array_Of_Words, char **argv, int status);
 void freeArray(char **array_Of_Words, int array_size);
 void handleBuiltins(char **array_Of_Words, char **argv, int status);
 

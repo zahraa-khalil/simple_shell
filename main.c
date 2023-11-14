@@ -20,14 +20,20 @@ int main(int argc __attribute__((unused)), char *argv[])
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
+		index++;
 
 		array_Of_Words = _stringTok(line, delim);
 		if (!array_Of_Words)
 		{
 			continue;
 		}
-			/*status = _exec(array_Of_Words, argv);*/
-		index++;
+		/*status = _exec(array_Of_Words, argv);*/
+
+		if (_checkBuiltIns(array_Of_Words, argv, status))
+		{
+			continue;
+		}
+
 		status = _fork(array_Of_Words, argv, index);
 
 		/*status = _exec(array_Of_Words, argv);*/

@@ -6,16 +6,17 @@
  *Return: nothing if the line is exit.
  */
 
-int _checkBuiltIns(char **array_Of_Words)
+int _checkBuiltIns(char **array_Of_Words, char **argv, int status)
 {
 	int i = 0;
 	char *builtins[] = {
 		"exit", "env", "setenv", "cd", NULL};
-
 	for (i = 0; builtins[i]; i++)
 	{
-		if (strcmp(array_Of_Words[i], builtins[i]) == 0)
+		if (strcmp(array_Of_Words[0], builtins[i]) == 0)
 		{
+			handleBuiltins(array_Of_Words, argv, status);
+
 			return (1);
 		}
 	}
