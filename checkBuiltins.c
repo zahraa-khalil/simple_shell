@@ -14,7 +14,7 @@ int _checkBuiltIns(char **array_Of_Words)
 
 	for (i = 0; builtins[i]; i++)
 	{
-		if (strcmp(array_Of_Words[i], builtins[i] == 0))
+		if (strcmp(array_Of_Words[i], builtins[i]) == 0)
 		{
 			return (1);
 		}
