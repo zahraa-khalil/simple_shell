@@ -37,7 +37,14 @@ int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int len);
 int isEnv(char *input);
 int _isalpha(int c);
-void exit_bul(char **array_Of_Words, char *line);
+void exit_bul(char **array_Of_Words, char **argv, int status);
+int _checkBuiltIns(char **array_Of_Words);
+void freeArray(char **array_Of_Words, int array_size);
+void handleBuiltins(char **array_Of_Words, char **argv, int status);
+
+/*dataChecks*/
+int _atoi(char *string);
+int is_positive_number(char *string);
 
 
 #endif
