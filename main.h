@@ -48,13 +48,10 @@ int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int len);
 int isEnv(char *input);
 int _isalpha(int c);
-void exit_bul(char **array_Of_Words_semi, char **array_Of_Words, char **argv, /
-int *status, int index);
-int _checkBuiltIns(char **array_Of_Words_semi, char **array_Of_Words, /
-char **argv, int *status, int index);
+void exit_bul(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
+int _checkBuiltIns(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
 void freeArray(char **array_Of_Words, int array_size);
-void handleBuiltin(char **array_Of_Words_semi, char **array_Of_Words, /
-char **argv, int *status, int index);
+void handleBuiltin(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
 void _setenv(char **array_Of_Words, int *status);
 void _unsetenv(char **array_Of_Words);
 /*dataChecks*/

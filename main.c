@@ -8,7 +8,7 @@
  */
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	char **array_Of_Words = NULL, **array_Of_Words_semi = NULL;
+	char **arrOfWs = NULL, **arrOfWsSmi = NULL;
 	char *line = NULL, *delim = " \n\t";
 	int status = 0, index = 0, iter = 0;
 
@@ -26,23 +26,22 @@ int main(int argc __attribute__((unused)), char *argv[])
 		{
 			free(line), line = NULL;
 			continue;	}
-		array_Of_Words_semi = _check_operators(line);
+		arrOfWsSmi = _check_operators(line);
 		free(line), line = NULL;
-		while (array_Of_Words_semi[iter])
+		while (arrOfWsSmi[iter])
 		{
-			array_Of_Words = _stringTok(array_Of_Words_semi[iter], delim);
-			if (!array_Of_Words)
+			arrOfWs = _stringTok(arrOfWsSmi[iter], delim);
+			if (!arrOfWs)
 				break;
-			if (_checkBuiltIns(array_Of_Words_semi, array_Of_Words, /
-				argv, &status, index))
+			if (_checkBuiltIns(arrOfWsSmi, arrOfWs, argv, &status, index))
 				iter++;
 			else
 			{
-				status = _fork(array_Of_Words, argv, index);
+				status = _fork(arrOfWs, argv, index);
 				iter++;
 			}
 		}
-		free(array_Of_Words_semi), array_Of_Words_semi = NULL;
+		free(arrOfWsSmi), arrOfWsSmi = NULL;
 	}
 	return (0);
 }
