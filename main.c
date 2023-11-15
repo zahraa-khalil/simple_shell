@@ -43,7 +43,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 			/*_check_operators(array_Of_Words);*/
 			/*printf("main line :%s\n", array_Of_Words[0]);*/
 
-			if (_checkBuiltIns(array_Of_Words, argv, &status, index))
+			if (_checkBuiltIns(array_Of_Words_semi, array_Of_Words, argv, &status, index))
 			{
 				iter++;
 			}

@@ -23,18 +23,16 @@ char *_itoa(int number);
 void _reverse_str(char *string, int length);
 char *_strcat(char *dest, char *src);
 
-
-
 int _putchar(char c);
 void _puts(char *str);
 char **_stringTok(char *string, char *delim);
 void _strcpy(char *source, char *destination);
 char *_strdup(char *source);
-    char *_strchr(char *s, char c);
-    char *_strstr(char *haystack, char *needle);
-    char **  _check_operators(char *string);
-    char **  _handle_operator(int iter, char *string);
-    char ** _semicolon(char *string);
+char *_strchr(char *s, char c);
+char *_strstr(char *haystack, char *needle);
+char **_check_operators(char *string);
+char **_handle_operator(int iter, char *string);
+char **_semicolon(char *string);
 
 int _wait(int status);
 int _ppid(void);
@@ -50,16 +48,16 @@ int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int len);
 int isEnv(char *input);
 int _isalpha(int c);
-void exit_bul(char **array_Of_Words, char **argv, int *status, int index);
-int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index);
+void exit_bul(char **array_Of_Words_semi, char **array_Of_Words, char **argv, /
+int *status, int index);
+int _checkBuiltIns(char **array_Of_Words_semi, char **array_Of_Words, /
+char **argv, int *status, int index);
 void freeArray(char **array_Of_Words, int array_size);
-void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index);
+void handleBuiltin(char **array_Of_Words_semi, char **array_Of_Words, /
+char **argv, int *status, int index);
 void _setenv(char **array_Of_Words, int *status);
 void _unsetenv(char **array_Of_Words);
-
 /*dataChecks*/
 int _atoi(char *string);
 int is_positive_number(char *string);
-
-
 #endif

@@ -6,10 +6,11 @@
  * @argv: command line arguments
  * @status: exit status
  * @index: line number
+ * @array_Of_Words_semi: list
  *Return: nothing if the line is exit.
  */
 
-int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
+int _checkBuiltIns(char **array_Of_Words_semi, char **array_Of_Words, char **argv, int *status, int index)
 {
 	int i = 0;
 	char *builtins[] = {
@@ -18,7 +19,7 @@ int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
 	{
 		if (_strcmp(array_Of_Words[0], builtins[i]) == 0)
 		{
-			handleBuiltin(array_Of_Words, argv, status, index);
+			handleBuiltin(array_Of_Words_semi, array_Of_Words, argv, status, index);
 
 			return (1);
 		}
@@ -35,10 +36,10 @@ int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
  * Return: void
  */
 
-void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index)
+void handleBuiltin(char **array_Of_Words_semi, char **array_Of_Words, char **argv, int *status, int index)
 {
 	if (_strcmp(array_Of_Words[0], "exit") == 0)
-		exit_bul(array_Of_Words, argv, status, index);
+		exit_bul(array_Of_Words_semi, array_Of_Words, argv, status, index);
 
 	else if (_strcmp(array_Of_Words[0], "env") == 0)
 		_environ(array_Of_Words, status);

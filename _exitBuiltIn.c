@@ -9,7 +9,7 @@
  * Return: exit status
  */
 
-void exit_bul(char **array_Of_Words, char **argv, int *status, int index)
+void exit_bul(char** array_Of_Words_semi, char **array_Of_Words, char **argv, int *status, int index)
 {
 	/*note : change status to pointer*/
 	int exit_status = (*status);
@@ -40,5 +40,6 @@ void exit_bul(char **array_Of_Words, char **argv, int *status, int index)
 		}
 	}
 	_freeArrOfWords(array_Of_Words);
+	free(array_Of_Words_semi);
 	exit(exit_status);
 }
