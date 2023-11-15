@@ -18,7 +18,7 @@ int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
 	{
 		if (strcmp(array_Of_Words[0], builtins[i]) == 0)
 		{
-			handleBuiltins(array_Of_Words, argv, status, index);
+			handleBuiltin(array_Of_Words, argv, status, index);
 
 			return (1);
 		}
@@ -27,7 +27,7 @@ int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
 }
 
 /**
- *handleBuiltins - function handle builtins
+ *handleBuiltin - function handle builtins
  *@array_Of_Words: the array of words to check
  * @argv: command line arguments
  * @status: exit status
@@ -35,7 +35,7 @@ int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
  * Return: void
  */
 
-void handleBuiltins(char **array_Of_Words, char **argv, int *status, int index)
+void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index)
 {
 	if (_strcmp(array_Of_Words[0], "exit") == 0)
 		exit_bul(array_Of_Words, argv, status, index);

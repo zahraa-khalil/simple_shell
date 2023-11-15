@@ -48,7 +48,7 @@ int _isalpha(int c);
 void exit_bul(char **array_Of_Words, char **argv, int *status, int index);
 int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index);
 void freeArray(char **array_Of_Words, int array_size);
-void handleBuiltins(char **array_Of_Words, char **argv, int *status, int index);
+void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index);
 
 /*dataChecks*/
 int _atoi(char *string);
