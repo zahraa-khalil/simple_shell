@@ -18,13 +18,16 @@ void _setenv(char **array_Of_Words, int *status __attribute__((unused)))
 	switch (length)
 	{
 	case 1:
-		return;
+			_freeArrOfWords(array_Of_Words);
+			return;
 	case 2:
-		if (setenv(array_Of_Words[1], "", 1) != 0)
+		/*if (setenv(array_Of_Words[1], "", 1) != 0)
 		{
 			write(2, "Error setting environment variable\n", 34);
-		}
-		break;
+				_freeArrOfWords(array_Of_Words);
+		}*/
+		_freeArrOfWords(array_Of_Words);
+		return;
 	case 3:
 		if (setenv(array_Of_Words[1], array_Of_Words[2], 1) != 0)
 		{

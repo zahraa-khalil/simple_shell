@@ -17,6 +17,7 @@ void _unsetenv(char **array_Of_Words)
 	switch (length)
 	{
 	case 1:
+		_freeArrOfWords(array_Of_Words);
 		return;
 	case 2:
 		if (unsetenv(array_Of_Words[1]) != 0)
