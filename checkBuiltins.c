@@ -13,7 +13,7 @@ int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index)
 {
 	int i = 0;
 	char *builtins[] = {
-		"exit", "env", "setenv","unsetenv", "cd", NULL};
+		"exit", "env", "setenv", "unsetenv", "cd", NULL};
 	for (i = 0; builtins[i]; i++)
 	{
 		if (strcmp(array_Of_Words[0], builtins[i]) == 0)

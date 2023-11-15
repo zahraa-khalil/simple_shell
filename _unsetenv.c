@@ -3,7 +3,6 @@
 /**
  *_unsetenv - function that sets the environment variable
  *@array_Of_Words: the array of words
- *@status: the status
  * Return: Nothing
  */
 void _unsetenv(char **array_Of_Words)
