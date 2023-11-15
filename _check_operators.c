@@ -1,12 +1,15 @@
 #include "main.h"
-char **  _check_operators(char *string)
+char **  _check_operators(char *str)
 {
-		char ** array_Of_Words_semi = NULL;
+	char ** array_Of_Words_semi = NULL;
 
-	char *found = NULL;
+	char *found = NULL, *string = NULL;
 	int iter = 0;
 	char *operators[] = {
 		";", "&&", "||", NULL};
+
+			string = _strdup(str);
+
 	/*aaa ; bbb ; ccc ; ddd*/
 	while (operators[iter])
 	{
@@ -33,9 +36,10 @@ char **  _check_operators(char *string)
 		/*free(found), found = NULL;*/
 	}
 
-		array_Of_Words_semi = malloc((sizeof(char *)));
+		array_Of_Words_semi = malloc(2* (sizeof(char *)));
 
 		array_Of_Words_semi[0] = _strdup(string);
+		array_Of_Words_semi[1] = NULL;
 		return(array_Of_Words_semi);
 }
 

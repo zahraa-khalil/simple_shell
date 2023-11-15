@@ -24,6 +24,8 @@ int main(int argc __attribute__((unused)), char *argv[])
 		index++;
 
 		array_Of_Words_semi = _check_operators(line);
+		free(line), line = NULL;
+
 		while(array_Of_Words_semi[iter])
 		{
 			array_Of_Words = _stringTok(array_Of_Words_semi[iter], delim);
