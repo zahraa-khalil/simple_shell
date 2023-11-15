@@ -30,6 +30,11 @@ void _puts(char *str);
 char **_stringTok(char *string, char *delim);
 void _strcpy(char *source, char *destination);
 char *_strdup(char *source);
+    char *_strchr(char *s, char c);
+    char *_strstr(char *haystack, char *needle);
+    char **  _check_operators(char *string);
+    char **  _handle_operator(int iter, char *string);
+    char ** _semicolon(char *string);
 
 int _wait(int status);
 int _ppid(void);
