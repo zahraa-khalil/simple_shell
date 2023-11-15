@@ -41,5 +41,5 @@ void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index)
 		exit_bul(array_Of_Words, argv, status, index);
 
 	else if (_strcmp(array_Of_Words[0], "env") == 0)
-		_environ();
+		_environ(array_Of_Words, status);
 }

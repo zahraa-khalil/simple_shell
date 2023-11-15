@@ -36,7 +36,7 @@ int _ppid(void);
 int _pid(void);
 int _stat(const char *path);
 int _whichFile(char *filename[]);
-int _environ(void);
+void _environ(char **array_Of_Words, int *status);
 void exit_program(char *input);
 char *_getenv(char *name);
 

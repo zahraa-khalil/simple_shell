@@ -4,10 +4,12 @@
  *_environ -  pointer to an array of strings.
  *Each string in this array represents an environment variable
  *in the form "name=value".
+ *@array_Of_Words: the array of strings
+ *@status: the status number
  *Return: environment variable name
  */
 
-int _environ(void)
+void _environ(char **array_Of_Words, int *status)
 {
 	char **env = environ;
 	int fd = 1;
@@ -21,5 +23,6 @@ int _environ(void)
 
 		env++;
 	}
-	return (0);
+	_freeArrOfWords(array_Of_Words);
+	(*status) = 0;
 }
