@@ -4,5 +4,6 @@
         "_exit": "c",
         "_puts": "c",
         "_path": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
