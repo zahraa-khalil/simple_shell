@@ -6,11 +6,11 @@
  * @arrOfWs: Array of command strings
  * @stus: exit stus
  * @index: line number
- * @arrOfWsSmi: Array of command strings
+ * @arOfWsSmi: Array of command strings
  * Return: exit stus
  */
 
-void exit_b(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
+void exit_b(char **arOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
 {
 	/*note : change stus to pointer*/
 	int exit_status = (*stus);
@@ -41,6 +41,6 @@ void exit_b(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
 		}
 	}
 	_freeArrOfWords(arrOfWs);
-	free(arrOfWsSmi);
+	free(arOfWsSmi);
 	exit(exit_status);
 }

@@ -48,10 +48,10 @@ int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int len);
 int isEnv(char *input);
 int _isalpha(int c);
-void exit_b(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
-int _ckBltIns(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
+void exit_b(char **arOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
+int _ckBltIns(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int indx);
 void freeArray(char **array_Of_Words, int array_size);
-void hdlBltIn(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index);
+void hdlBltIn(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int indx);
 void _setenv(char **array_Of_Words, int *status);
 void _unsetenv(char **array_Of_Words);
 /*dataChecks*/

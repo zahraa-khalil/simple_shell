@@ -5,12 +5,12 @@
  *@arOfWs: the array of words to check
  * @av: command line arguments
  * @stus: exit stus
- * @index: line number
+ * @indx: line number
  * @arOfWsSmi: list
  *Return: nothing if the line is exit.
  */
 
-int _ckBltIns(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int index)
+int _ckBltIns(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int indx)
 {
 	int i = 0;
 	char *builtins[] = {
@@ -19,7 +19,7 @@ int _ckBltIns(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int index)
 	{
 		if (_strcmp(arOfWs[0], builtins[i]) == 0)
 		{
-			hdlBltIn(arOfWsSmi, arOfWs, av, stus, index);
+			hdlBltIn(arOfWsSmi, arOfWs, av, stus, indx);
 
 			return (1);
 		}
@@ -32,15 +32,15 @@ int _ckBltIns(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int index)
  *@arOfWs: the array of words to check
  * @av: command line arguments
  * @stus: exit stus
- * @index: line number
+ * @indx: line number
  * @arOfWsSmi: the array of words
  * Return: void
  */
 
-void hdlBltIn(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int index)
+void hdlBltIn(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int indx)
 {
 	if (_strcmp(arOfWs[0], "exit") == 0)
-		exit_b(arOfWsSmi, arOfWs, av, stus, index);
+		exit_b(arOfWsSmi, arOfWs, av, stus, indx);
 
 	else if (_strcmp(arOfWs[0], "env") == 0)
 		_environ(arOfWs, stus);
