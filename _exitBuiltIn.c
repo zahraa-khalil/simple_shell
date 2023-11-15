@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * exit_bul - Exit Status for built-in commands
+ * exit_b - Exit Status for built-in commands
  * @av: command line arguments
  * @arrOfWs: Array of command strings
  * @stus: exit stus
@@ -10,7 +10,7 @@
  * Return: exit stus
  */
 
-void exit_bul(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
+void exit_b(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
 {
 	/*note : change stus to pointer*/
 	int exit_status = (*stus);

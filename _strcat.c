@@ -30,8 +30,7 @@ char *_strcat(char *dest, char *src)
 	return (dest);
 }
 
-#include "main.h"
-#include <stdio.h>
+
 
 /**
  **_strchr - a function that copies memory area.
@@ -56,7 +55,7 @@ char *_strchr(char *s, char c)
 	}
 }
 
-#include "main.h"
+
 
 /**
  *_strstr - Locates a substring.
@@ -92,5 +91,5 @@ char *_strstr(char *haystack, char *needle)
 		haystack++;
 	}
 
-	return ('\0');
+	return (NULL);
 }

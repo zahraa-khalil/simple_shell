@@ -33,7 +33,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 			arrOfWs = _stringTok(arrOfWsSmi[iter], delim);
 			if (!arrOfWs)
 				break;
-			if (_checkBuiltIns(arrOfWsSmi, arrOfWs, argv, &status, index))
+			if (_ckBltIns(arrOfWsSmi, arrOfWs, argv, &status, index))
 				iter++;
 			else
 			{

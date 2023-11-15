@@ -1,25 +1,25 @@
 #include "main.h"
 
 /**
- *_checkBuiltIns - function check if the line is exit
- *@arrOfWs: the array of words to check
+ *_ckBltIns - function check if the line is exit
+ *@arOfWs: the array of words to check
  * @av: command line arguments
  * @stus: exit stus
  * @index: line number
- * @arrOfWsSmi: list
+ * @arOfWsSmi: list
  *Return: nothing if the line is exit.
  */
 
-int _checkBuiltIns(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
+int _ckBltIns(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int index)
 {
 	int i = 0;
 	char *builtins[] = {
 		"exit", "env", "setenv", "unsetenv", "cd", NULL};
 	for (i = 0; builtins[i]; i++)
 	{
-		if (_strcmp(arrOfWs[0], builtins[i]) == 0)
+		if (_strcmp(arOfWs[0], builtins[i]) == 0)
 		{
-			handleBuiltin(arrOfWsSmi, arrOfWs, av, stus, index);
+			hdlBltIn(arOfWsSmi, arOfWs, av, stus, index);
 
 			return (1);
 		}
@@ -28,24 +28,24 @@ int _checkBuiltIns(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int 
 }
 
 /**
- *handleBuiltin - function handle builtins
- *@arrOfWs: the array of words to check
+ *hdlBltIn - function handle builtins
+ *@arOfWs: the array of words to check
  * @av: command line arguments
  * @stus: exit stus
  * @index: line number
- * @arrOfWsSmi: the array of words
+ * @arOfWsSmi: the array of words
  * Return: void
  */
 
-void handleBuiltin(char **arrOfWsSmi, char **arrOfWs, char **av, int *stus, int index)
+void hdlBltIn(char **arOfWsSmi, char **arOfWs, char **av, int *stus, int index)
 {
-	if (_strcmp(arrOfWs[0], "exit") == 0)
-		exit_bul(arrOfWsSmi, arrOfWs, av, stus, index);
+	if (_strcmp(arOfWs[0], "exit") == 0)
+		exit_b(arOfWsSmi, arOfWs, av, stus, index);
 
-	else if (_strcmp(arrOfWs[0], "env") == 0)
-		_environ(arrOfWs, stus);
-	else if (_strcmp(arrOfWs[0], "setenv") == 0)
-		_setenv(arrOfWs, stus);
-	else if (_strcmp(arrOfWs[0], "unsetenv") == 0)
-		_unsetenv(arrOfWs);
+	else if (_strcmp(arOfWs[0], "env") == 0)
+		_environ(arOfWs, stus);
+	else if (_strcmp(arOfWs[0], "setenv") == 0)
+		_setenv(arOfWs, stus);
+	else if (_strcmp(arOfWs[0], "unsetenv") == 0)
+		_unsetenv(arOfWs);
 }
