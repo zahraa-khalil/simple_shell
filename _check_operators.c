@@ -38,7 +38,7 @@ char **  _check_operators(char *str)
 
 		array_Of_Words_semi = malloc(2* (sizeof(char *)));
 
-		array_Of_Words_semi[0] = _strdup(string);
+		array_Of_Words_semi[0] = string;
 		array_Of_Words_semi[1] = NULL;
 		return(array_Of_Words_semi);
 }

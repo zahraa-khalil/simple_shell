@@ -22,6 +22,11 @@ int main(int argc __attribute__((unused)), char *argv[])
 			return (status);
 		}
 		index++;
+			if (_strcmp(line, "\n") == 0)
+			{
+				free(line), line = NULL;
+				continue;
+			}
 
 		array_Of_Words_semi = _check_operators(line);
 		free(line), line = NULL;
@@ -31,7 +36,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 			array_Of_Words = _stringTok(array_Of_Words_semi[iter], delim);
 			if (!array_Of_Words)
 			{
-				continue;
+				break;
 			}
 			/*status = _exec(array_Of_Words, argv);*/
 			
@@ -40,13 +45,14 @@ int main(int argc __attribute__((unused)), char *argv[])
 
 			if (_checkBuiltIns(array_Of_Words, argv, &status, index))
 			{
-				continue;
+				iter++;
 			}
 
-			status = _fork(array_Of_Words, argv, index);
+			else{
+				status = _fork(array_Of_Words, argv, index);
 
-			/*status = _exec(array_Of_Words, argv);*/
 			iter++;
+			}
 		}
 		free(array_Of_Words_semi), array_Of_Words_semi = NULL;
 	}
