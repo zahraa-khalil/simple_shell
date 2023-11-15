@@ -6,10 +6,12 @@
  * @array_Of_Words: Array of command strings
  * @status: exit status
  * @index: line number
+ * @array_Of_Words_semi: Array of command strings
  * Return: exit status
  */
 
-void exit_bul(char** array_Of_Words_semi, char **array_Of_Words, char **argv, int *status, int index)
+void exit_bul(char **array_Of_Words_semi, char **array_Of_Words, /
+char **argv, int *status, int index)
 {
 	/*note : change status to pointer*/
 	int exit_status = (*status);
