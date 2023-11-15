@@ -42,4 +42,6 @@ void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index)
 
 	else if (_strcmp(array_Of_Words[0], "env") == 0)
 		_environ(array_Of_Words, status);
+	else if (_strcmp(array_Of_Words[0], "setenv") == 0)
+		_setenv(array_Of_Words, status);
 }

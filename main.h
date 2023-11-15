@@ -49,7 +49,7 @@ void exit_bul(char **array_Of_Words, char **argv, int *status, int index);
 int _checkBuiltIns(char **array_Of_Words, char **argv, int *status, int index);
 void freeArray(char **array_Of_Words, int array_size);
 void handleBuiltin(char **array_Of_Words, char **argv, int *status, int index);
-
+void _setenv(char **array_Of_Words, int *status);
 /*dataChecks*/
 int _atoi(char *string);
 int is_positive_number(char *string);
